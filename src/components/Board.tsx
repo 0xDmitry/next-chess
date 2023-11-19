@@ -14,7 +14,7 @@ const Row = styled.div`
   flex-direction: row;
 `;
 
-export default function Field() {
+export default function Board() {
   return (
     <Container>
       {[...Array(8)].map((_, i) => (

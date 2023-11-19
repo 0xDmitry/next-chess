@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import Field from "../components/Field";
+import Board from "../components/Board";
 
 export const metadata: Metadata = {
   title: "Next Chess",
 };
 
 export default function Home() {
-  return <Field />;
+  return <Board />;
 }
