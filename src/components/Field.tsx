@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Cell from "./Cell";
-import { getCellColor, getCellDigit, getCellLetter } from "../utils";
+import Square from "./Square";
+import { getSquareColor, getSquareDigit, getSquareLetter } from "../utils";
 
 const Container = styled.div`
   display: flex;
@@ -18,12 +18,12 @@ export default function Field() {
       {[...Array(8)].map((_, i) => (
         <Row key={i}>
           {[...Array(8)].map((_, j) => (
-            <Cell
+            <Square
               key={`${i}-${j}`}
-              color={getCellColor(i, j)}
-              digit={getCellDigit(i, j)}
-              letter={getCellLetter(i, j)}
-            ></Cell>
+              color={getSquareColor(i, j)}
+              digit={getSquareDigit(i, j)}
+              letter={getSquareLetter(i, j)}
+            ></Square>
           ))}
         </Row>
       ))}

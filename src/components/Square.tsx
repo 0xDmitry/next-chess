@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CellColor } from "../utils";
+import { SquareColor } from "../utils";
 
 const Container = styled.div<{ $color: string }>`
   position: relative;
@@ -26,21 +26,21 @@ const Letter = styled.div<{ $color: string }>`
 `;
 
 interface Props {
-  color: CellColor;
+  color: SquareColor;
   digit?: string;
   letter?: string;
 }
 
-export default function Cell({ color, digit, letter }: Props) {
+export default function Square({ color, digit, letter }: Props) {
   return (
-    <Container $color={color === CellColor.Black ? "#7D945D" : "#EEEED5"}>
+    <Container $color={color === SquareColor.Black ? "#7D945D" : "#EEEED5"}>
       {digit && (
-        <Digit $color={color === CellColor.Black ? "#EEEED5" : "#7D945D"}>
+        <Digit $color={color === SquareColor.Black ? "#EEEED5" : "#7D945D"}>
           {digit}
         </Digit>
       )}
       {letter && (
-        <Letter $color={color === CellColor.Black ? "#EEEED5" : "#7D945D"}>
+        <Letter $color={color === SquareColor.Black ? "#EEEED5" : "#7D945D"}>
           {letter}
         </Letter>
       )}

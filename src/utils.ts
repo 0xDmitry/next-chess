@@ -1,17 +1,17 @@
-export enum CellColor {
+export enum SquareColor {
   Black = "Black",
   White = "White",
 }
 
-export function getCellColor(i: number, j: number) {
+export function getSquareColor(i: number, j: number) {
   if (i % 2 === 0) {
-    return j % 2 === 0 ? CellColor.White : CellColor.Black;
+    return j % 2 === 0 ? SquareColor.White : SquareColor.Black;
   } else {
-    return j % 2 === 0 ? CellColor.Black : CellColor.White;
+    return j % 2 === 0 ? SquareColor.Black : SquareColor.White;
   }
 }
 
-export function getCellDigit(i: number, j: number): string | null {
+export function getSquareDigit(i: number, j: number): string | null {
   if (j > 0) {
     return null;
   }
@@ -21,7 +21,7 @@ export function getCellDigit(i: number, j: number): string | null {
 
 const letters = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
-export function getCellLetter(i: number, j: number): string | null {
+export function getSquareLetter(i: number, j: number): string | null {
   if (i < 7) {
     return null;
   }
