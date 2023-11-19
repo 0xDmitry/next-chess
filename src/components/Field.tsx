@@ -1,3 +1,5 @@
+"use client";
+
 import styled from "styled-components";
 import Square from "./Square";
 import { getSquareColor, getSquareDigit, getSquareLetter } from "../utils";
