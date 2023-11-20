@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import useSound from "use-sound";
 import styled from "styled-components";
 import Square from "./Square";
 import { Piece, createInitialBoardState, getSquareId } from "../utils";
@@ -20,6 +21,7 @@ export default function Board() {
     createInitialBoardState()
   );
   const [activeSquareId, setActiveSquareId] = useState<string | null>(null);
+  const [playPieceTap] = useSound("/sounds/piece-tap.wav");
 
   return (
     <Container>
@@ -43,6 +45,7 @@ export default function Board() {
                       const newState = new Map(prevState);
                       newState.delete(activeSquareId);
                       newState.set(squareId, prevState.get(activeSquareId));
+                      playPieceTap();
                       return newState;
                     });
                     setActiveSquareId(null);
