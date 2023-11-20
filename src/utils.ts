@@ -1,8 +1,3 @@
-export enum SquareColor {
-  Light = "Light",
-  Dark = "Dark",
-}
-
 export enum PieceColor {
   White = "White",
   Black = "Black",
@@ -22,37 +17,13 @@ export type Piece = {
   type: PieceType;
 };
 
-const files = ["a", "b", "c", "d", "e", "f", "g", "h"];
+export const files = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
-export function getSquareId(i: number, j: number): string {
+export function getSquareId(i: number, j: number) {
   return `${files[j]}${8 - i}`;
 }
 
-export function getSquareColor(i: number, j: number) {
-  if (i % 2 === 0) {
-    return j % 2 === 0 ? SquareColor.Light : SquareColor.Dark;
-  } else {
-    return j % 2 === 0 ? SquareColor.Dark : SquareColor.Light;
-  }
-}
-
-export function getSquareRankLabel(i: number, j: number): string | null {
-  if (j > 0) {
-    return null;
-  }
-
-  return String(8 - i);
-}
-
-export function getSquareFileLabel(i: number, j: number): string | null {
-  if (i < 7) {
-    return null;
-  }
-
-  return files[j];
-}
-
-export const createInitialBoardState = () => {
+export function createInitialBoardState() {
   const result = new Map<string, Piece>();
 
   result.set("a1", { color: PieceColor.White, type: PieceType.Rook });
@@ -86,4 +57,4 @@ export const createInitialBoardState = () => {
   result.set("h8", { color: PieceColor.Black, type: PieceType.Rook });
 
   return result;
-};
+}
