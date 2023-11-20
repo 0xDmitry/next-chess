@@ -62,6 +62,7 @@ const RankLabel = styled.div<{ $color: string }>`
   top: 5px;
   left: 5px;
   color: ${(props) => props.$color};
+  user-select: none;
 `;
 
 const FileLabel = styled.div<{ $color: string }>`
@@ -69,6 +70,7 @@ const FileLabel = styled.div<{ $color: string }>`
   bottom: 5px;
   right: 5px;
   color: ${(props) => props.$color};
+  user-select: none;
 `;
 
 function renderPiece(piece?: Piece) {
